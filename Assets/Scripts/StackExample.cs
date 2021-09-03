@@ -28,6 +28,7 @@ public class StackExample : MonoBehaviour
 
         //pop player score from stack
         stack.Pop();
+        Debug.Log("Cube removed");
         ShowInfoInStack(stack);
     }
 
