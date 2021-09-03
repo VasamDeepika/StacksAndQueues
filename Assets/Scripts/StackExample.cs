@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class StackExample : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI stackDebug;
+    GameObject cubePrefab;
+    int i = 0;
+    //private TextMeshProUGUI stackDebug;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +16,14 @@ public class StackExample : MonoBehaviour
         Stack stack = new Stack();
 
         //prepare data
-        int firstPlayerScore = 12;
-        int secondPlayerScore = 10;
-        int thirdPlayerScore = 100;
+        //int firstPlayerScore = 12;
+        //int secondPlayerScore = 10;
+        //int thirdPlayerScore = 100;
 
         //push a new player score into stack
-        stack.Push(firstPlayerScore);
-        stack.Push(secondPlayerScore);
-        stack.Push(thirdPlayerScore);
+        stack.Push(cubePrefab);
+        stack.Push(cubePrefab);
+        stack.Push(cubePrefab);
         ShowInfoInStack(stack);//show information in stack
 
         //pop player score from stack
@@ -31,10 +33,12 @@ public class StackExample : MonoBehaviour
 
     void ShowInfoInStack(Stack stack)
     {
-        stackDebug.text += "..............\n";
+        //stackDebug.text += "..............\n";
         foreach (var stackitem in stack)
         {
-            stackDebug.text += $"{stackitem}\n";
+            //stackDebug.text += $"{stackitem}\n";
+            i++;
+            Instantiate(cubePrefab, transform.position+new Vector3(0,i,0), Quaternion.identity);
         }
     }
 

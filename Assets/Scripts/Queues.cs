@@ -29,7 +29,6 @@ namespace Queues
             if (contents.Count == 0)
             {
                 throw new InvalidOperationException("cant remove from queue");
-
             }
             else
             {
